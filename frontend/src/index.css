@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Outfit', sans-serif;
+
+  --color-primary: #475569;
+  --color-primary-foreground: #F8FAFC;
+  
+  --color-background: #F1F5F9; /* Slate 100 */
+}
+
+@layer base {
+  body {
+    @apply antialiased text-slate-100 bg-slate-950;
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    @apply bg-slate-900/50 backdrop-blur-xl border border-slate-800;
+  }
+  .input-dark {
+    @apply bg-slate-900 border-slate-800 text-slate-100 placeholder:text-slate-500 focus:ring-white focus:ring-offset-slate-950;
+  }
+}
