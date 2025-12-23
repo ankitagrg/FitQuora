@@ -5,7 +5,7 @@ import { Input } from '../components/ui/Input';
 import { Dumbbell } from 'lucide-react';
 
 export default function Signup() {
-    const { signup, authLoading } = useAuth(); // Destructure signup from useAuth
+    const { signup, authLoading } = useAuth(); 
     const navigate = useNavigate();
 
     const handleSignup = async (e) => {
