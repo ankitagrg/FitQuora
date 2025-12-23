@@ -12,7 +12,6 @@ export default function Profile() {
     const { workouts } = useWorkouts();
     const [isEditModalOpen, setIsEditModalOpen] = useState(false);
 
-    // Calculate weekly stats from real workouts
     const activityData = [
         { day: 'Mon', minutes: 0 },
         { day: 'Tue', minutes: 0 },
@@ -49,8 +48,6 @@ export default function Profile() {
     const totalWorkouts = workouts.length;
     const totalCalories = workouts.reduce((acc, curr) => acc + (curr.calories || 0), 0);
     const totalMinutes = workouts.reduce((acc, curr) => acc + (parseInt(curr.duration) || 0), 0);
-
-    // Dynamic Streak Calculation
     const getStreak = () => {
         if (workouts.length === 0) return 0;
 
