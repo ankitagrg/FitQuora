@@ -6,7 +6,7 @@ import { Button } from '../components/ui/Button';
 export default function Landing() {
     return (
         <div className="min-h-screen bg-slate-950 flex flex-col text-white selection:bg-white selection:text-slate-950">
-            {/* Navbar */}
+    
             <nav className="p-6 flex justify-between items-center max-w-7xl mx-auto w-full border-b border-white/10">
                 <div className="flex items-center gap-2">
                     <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center text-slate-950 shadow-lg shadow-white/10">
@@ -24,20 +24,15 @@ export default function Landing() {
                 </div>
             </nav>
 
-            {/* Hero Section */}
             <main className="flex-1 flex flex-col items-center justify-center text-center px-4 py-20 relative overflow-hidden">
-                {/* Background Glow */}
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-white/5 rounded-full blur-3xl pointer-events-none"></div>
 
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
-                    className="max-w-4xl mx-auto space-y-8 relative z-10"
-                >
-                    {/* Removed Badge */}
+                    className="max-w-4xl mx-auto space-y-8 relative z-10">
 
-                    {/* Smaller Title */}
                     <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight leading-tight">
                         Forged in <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-slate-400">Data</span>.
                         <br />
@@ -64,7 +59,7 @@ export default function Landing() {
                     </div>
                 </motion.div>
 
-                {/* Motivational Quote Section (Replaces Mock UI) */}
+
                 <motion.div
                     initial={{ opacity: 0, y: 40 }}
                     animate={{ opacity: 1, y: 0 }}
