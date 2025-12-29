@@ -6,13 +6,13 @@ const WorkoutContext = createContext();
 export function WorkoutProvider({ children }) {
     const [workouts, setWorkouts] = useState([]);
     const [loading, setLoading] = useState(false);
-    const { user } = useAuth(); // Depend on user auth state
+    const { user } = useAuth(); 
 
     useEffect(() => {
         if (user) {
             fetchWorkouts();
         } else {
-            setWorkouts([]); // Clear workouts on logout
+            setWorkouts([]); 
         }
     }, [user]);
 
