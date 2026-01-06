@@ -15,14 +15,17 @@ export default function Home() {
     const [isProfileModalOpen, setIsProfileModalOpen] = useState(false);
 
     // Body Metric Calculations
-    const heightInMeters = user?.height / 100;
+    const heightInMeters = (user?.height || 170) / 100;
     const bmi = user?.weight && user?.height ? (user.weight / (heightInMeters * heightInMeters)).toFixed(1) : null;
 
     // BMR (Mifflin-St Jeor)
     let bmr = 0;
-    if (user?.weight && user?.height && user?.age) {
-        if (user.gender === 'Male') bmr = 10 * user.weight + 6.25 * user.height - 5 * user.age + 5;
-        else bmr = 10 * user.weight + 6.25 * user.height - 5 * user.age - 161;
+    if (user) {
+        const weight = user.weight || 70;
+        const height = user.height || 170;
+        const age = user.age || 25;
+        if (user.gender === 'Male') bmr = 10 * weight + 6.25 * height - 5 * age + 5;
+        else bmr = 10 * weight + 6.25 * height - 5 * age - 161;
     }
 
 
