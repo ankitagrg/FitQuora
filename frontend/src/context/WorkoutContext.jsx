@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useEffect } from 'react';
+import { createContext, useContext, useState, useEffect, useCallback } from 'react';
 import { useAuth } from './AuthContext';
 
 const WorkoutContext = createContext();
@@ -6,17 +6,9 @@ const WorkoutContext = createContext();
 export function WorkoutProvider({ children }) {
     const [workouts, setWorkouts] = useState([]);
     const [loading, setLoading] = useState(false);
-    const { user } = useAuth(); 
+    const { user } = useAuth();
 
-    useEffect(() => {
-        if (user) {
-            fetchWorkouts();
-        } else {
-            setWorkouts([]); 
-        }
-    }, [user]);
-
-    const fetchWorkouts = async () => {
+    const fetchWorkouts = useCallback(async () => {
         setLoading(true);
         try {
             const token = user?.token || JSON.parse(localStorage.getItem('user'))?.token;
@@ -26,15 +18,26 @@ export function WorkoutProvider({ children }) {
                 }
             });
             const data = await response.json();
-            if (response.ok) {
+            if (response.ok && Array.isArray(data)) {
                 setWorkouts(data);
+            } else {
+                console.error("Fetch workouts response invalid:", data);
+                setWorkouts([]);
             }
         } catch (error) {
             console.error("Error fetching workouts:", error);
         } finally {
             setLoading(false);
         }
-    };
+    }, [user]);
+
+    useEffect(() => {
+        if (user) {
+            fetchWorkouts();
+        } else {
+            setWorkouts([]);
+        }
+    }, [user, fetchWorkouts]);
 
     const addWorkout = async (workoutData) => {
         try {
