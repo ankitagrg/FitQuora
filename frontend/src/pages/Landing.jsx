@@ -6,7 +6,7 @@ import { Button } from '../components/ui/Button';
 export default function Landing() {
     return (
         <div className="min-h-screen bg-slate-950 flex flex-col text-white selection:bg-white selection:text-slate-950">
-    
+
             <nav className="p-6 flex justify-between items-center max-w-7xl mx-auto w-full border-b border-white/10">
                 <div className="flex items-center gap-2">
                     <div className="w-10 h-10 bg-white rounded-xl flex items-center justify-center text-slate-950 shadow-lg shadow-white/10">
@@ -80,7 +80,7 @@ export default function Landing() {
 
             {/* Footer */}
             <footer className="py-8 text-center text-slate-600 text-sm border-t border-white/5 bg-slate-950">
-                <p>&copy; 2025 Fitquora. Strength in Simplicity.</p>
+                <p>&copy; {new Date().getFullYear()} FitQuora. All Rights Reserved</p>
             </footer>
         </div>
     );
