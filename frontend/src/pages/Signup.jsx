@@ -5,7 +5,7 @@ import { Input } from '../components/ui/Input';
 import { Dumbbell } from 'lucide-react';
 
 export default function Signup() {
-    const { signup, authLoading } = useAuth(); 
+    const { signup, authLoading } = useAuth();
     const navigate = useNavigate();
 
     const handleSignup = async (e) => {
@@ -51,18 +51,18 @@ export default function Signup() {
                 <div className="bg-white py-8 px-4 shadow-xl shadow-slate-200 border border-slate-100 sm:rounded-2xl sm:px-10">
                     <form className="space-y-6" onSubmit={handleSignup}>
                         <div className="grid grid-cols-2 gap-4">
-                            <Input id="firstName" label="First Name" required className="bg-white text-slate-900 placeholder:text-slate-400 border-slate-200 focus:ring-slate-950 focus:border-slate-950" labelClassName="text-slate-700" />
-                            <Input id="lastName" label="Last Name" required className="bg-white text-slate-900 placeholder:text-slate-400 border-slate-200 focus:ring-slate-950 focus:border-slate-950" labelClassName="text-slate-700" />
+                            <Input id="firstName" name="firstName" label="First Name" required className="bg-white text-slate-900 placeholder:text-slate-400 border-slate-200 focus:ring-slate-950 focus:border-slate-950" labelClassName="text-slate-700" />
+                            <Input id="lastName" name="lastName" label="Last Name" required className="bg-white text-slate-900 placeholder:text-slate-400 border-slate-200 focus:ring-slate-950 focus:border-slate-950" labelClassName="text-slate-700" />
                         </div>
 
-                        <Input id="email" label="Email address" type="email" required className="bg-white text-slate-900 placeholder:text-slate-400 border-slate-200 focus:ring-slate-950 focus:border-slate-950" labelClassName="text-slate-700" />
+                        <Input id="email" name="email" label="Email address" type="email" required className="bg-white text-slate-900 placeholder:text-slate-400 border-slate-200 focus:ring-slate-950 focus:border-slate-950" labelClassName="text-slate-700" />
 
-                        <Input id="password" label="Password" type="password" required className="bg-white text-slate-900 placeholder:text-slate-400 border-slate-200 focus:ring-slate-950 focus:border-slate-950" labelClassName="text-slate-700" />
+                        <Input id="password" name="password" label="Password" type="password" required className="bg-white text-slate-900 placeholder:text-slate-400 border-slate-200 focus:ring-slate-950 focus:border-slate-950" labelClassName="text-slate-700" />
 
                         <div className="grid grid-cols-3 gap-4">
-                            <Input id="age" label="Age" type="number" required className="bg-white text-slate-900 placeholder:text-slate-400 border-slate-200 focus:ring-slate-950 focus:border-slate-950" labelClassName="text-slate-700" />
-                            <Input id="height" label="Height (cm)" type="number" required className="bg-white text-slate-900 placeholder:text-slate-400 border-slate-200 focus:ring-slate-950 focus:border-slate-950" labelClassName="text-slate-700" />
-                            <Input id="weight" label="Weight (kg)" type="number" className="bg-white text-slate-900 placeholder:text-slate-400 border-slate-200 focus:ring-slate-950 focus:border-slate-950" labelClassName="text-slate-700" />
+                            <Input id="age" name="age" label="Age" type="number" required className="bg-white text-slate-900 placeholder:text-slate-400 border-slate-200 focus:ring-slate-950 focus:border-slate-950" labelClassName="text-slate-700" />
+                            <Input id="height" name="height" label="Height (cm)" type="number" required className="bg-white text-slate-900 placeholder:text-slate-400 border-slate-200 focus:ring-slate-950 focus:border-slate-950" labelClassName="text-slate-700" />
+                            <Input id="weight" name="weight" label="Weight (kg)" type="number" className="bg-white text-slate-900 placeholder:text-slate-400 border-slate-200 focus:ring-slate-950 focus:border-slate-950" labelClassName="text-slate-700" />
                         </div>
 
                         <div>
