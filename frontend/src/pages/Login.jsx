@@ -9,8 +9,8 @@ export default function Login() {
     const { login, authLoading } = useAuth();
     const navigate = useNavigate();
     const location = useLocation();
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+    const [email, setEmail] = useState('demo@example.com');
+    const [password, setPassword] = useState('password');
 
     const from = location.state?.from?.pathname || '/dashboard';
 
