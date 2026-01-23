@@ -14,11 +14,9 @@ export default function Home() {
     const { user } = useAuth();
     const [isProfileModalOpen, setIsProfileModalOpen] = useState(false);
 
-    // Body Metric Calculations
     const heightInMeters = (user?.height || 170) / 100;
     const bmi = user?.weight && user?.height ? (user.weight / (heightInMeters * heightInMeters)).toFixed(1) : null;
 
-    // BMR (Mifflin-St Jeor)
     let bmr = 0;
     if (user) {
         const weight = user.weight || 70;
@@ -28,14 +26,10 @@ export default function Home() {
         else bmr = 10 * weight + 6.25 * height - 5 * age - 161;
     }
 
-
-
-    // Calculate totals
     const totalTime = workouts.reduce((acc, curr) => acc + (parseInt(curr.duration) || 0), 0);
     const totalCalories = workouts.reduce((acc, curr) => acc + (curr.calories || 0), 0);
-
-    // Dynamic Streak Calculation
     const getStreak = () => {
+        
         if (workouts.length === 0) return 0;
         const dates = [...new Set(workouts.map(w => w.date))].sort().reverse();
         const today = new Date().toISOString().split('T')[0];
@@ -54,7 +48,6 @@ export default function Home() {
 
     return (
         <div className="space-y-12 pb-10">
-            {/* Header */}
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
                 <div>
                     <h1 className="text-3xl font-bold text-slate-950 tracking-tight">Dashboard</h1>
