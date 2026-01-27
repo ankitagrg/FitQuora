@@ -23,33 +23,26 @@ export default function AddWorkout() {
         const newExercises = exercises.filter((_, i) => i !== index);
         setExercises(newExercises);
     };
-
     const handleExerciseChange = (index, field, value) => {
         const newExercises = [...exercises];
         newExercises[index][field] = value;
         setExercises(newExercises);
     };
-
     const handleSubmit = (e) => {
         e.preventDefault();
         if (!title || !duration) return;
-
-        // Simple calorie estimation (mock)
         const calories = Math.floor(parseInt(duration) * 5 + Math.random() * 50);
-
         addWorkout({
             title,
             duration: `${duration} min`,
-            exercises: exercises.filter(e => e.name), // Filter empty
+            exercises: exercises.filter(e => e.name),
             calories
         });
-
         navigate('/');
     };
 
     return (
         <div className="max-w-3xl mx-auto pb-20">
-            {/* Header */}
             <div className="mb-8 flex items-center justify-between">
                 <div>
                     <Button variant="ghost" className="mb-2 pl-0 gap-2 text-slate-500 hover:text-slate-900" onClick={() => navigate(-1)}>
@@ -63,15 +56,12 @@ export default function AddWorkout() {
                     <Dumbbell className="w-6 h-6" />
                 </div>
             </div>
-
             <form onSubmit={handleSubmit} className="space-y-8">
-                {/* Session Card */}
                 <div className="bg-white p-6 sm:p-8 rounded-3xl shadow-xl shadow-slate-100 border border-slate-100 space-y-6">
                     <div className="flex items-center gap-3 mb-2">
                         <div className="w-1 h-6 bg-slate-950 rounded-full"></div>
                         <h2 className="text-xl font-bold text-slate-950">Session Details</h2>
                     </div>
-
                     <div className="grid sm:grid-cols-2 gap-6">
                         <Input
                             id="title"
@@ -96,8 +86,6 @@ export default function AddWorkout() {
                         />
                     </div>
                 </div>
-
-                {/* Exercises Section */}
                 <div className="space-y-4">
                     <div className="flex items-center justify-between px-1">
                         <div className="flex items-center gap-3">
@@ -121,7 +109,6 @@ export default function AddWorkout() {
                                     <Trash2 className="w-5 h-5" />
                                 </button>
                             )}
-
                             <div className="grid gap-6">
                                 <div className="flex gap-4 items-start">
                                     <span className="flex-shrink-0 w-8 h-8 rounded-lg bg-slate-50 text-slate-500 font-bold flex items-center justify-center text-sm border border-slate-100">
@@ -139,7 +126,6 @@ export default function AddWorkout() {
                                         />
                                     </div>
                                 </div>
-
                                 <div className="grid grid-cols-3 gap-4 pl-12">
                                     <Input
                                         label="Sets"
@@ -173,7 +159,6 @@ export default function AddWorkout() {
                         </div>
                     ))}
                 </div>
-
                 <div className="fixed bottom-0 left-0 right-0 p-4 bg-white/80 backdrop-blur-md border-t border-slate-100 md:hidden z-30">
                     <Button type="submit" size="lg" className="w-full shadow-xl shadow-slate-950/20">
                         <Save className="w-5 h-5 mr-2" />
