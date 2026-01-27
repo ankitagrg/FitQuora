@@ -27,10 +27,8 @@ export default function Onboarding() {
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.id]: e.target.value });
     };
-
     const handleNext = () => setStep(step + 1);
     const handleBack = () => setStep(step - 1);
-
     const handleSubmit = async (e) => {
         e.preventDefault();
         setLoading(true);
@@ -64,15 +62,12 @@ export default function Onboarding() {
                     <h1 className="text-2xl font-bold tracking-tight">Setup your profile</h1>
                     <p className="text-slate-400 text-sm mt-2">We need these details to build your unique AI workout and nutrition plan.</p>
                 </div>
-
                 <div className="p-8">
-                    {/* Progress Bar */}
                     <div className="flex gap-2 mb-8">
                         {[1, 2, 3].map((s) => (
                             <div key={s} className={`h-1.5 flex-1 rounded-full transition-all duration-500 ${step >= s ? 'bg-slate-950' : 'bg-slate-100'}`} />
                         ))}
                     </div>
-
                     <form onSubmit={handleSubmit} className="space-y-6">
                         {step === 1 && (
                             <div className="space-y-4 animate-in fade-in slide-in-from-right-4 duration-500">
@@ -101,7 +96,6 @@ export default function Onboarding() {
                                 </Button>
                             </div>
                         )}
-
                         {step === 2 && (
                             <div className="space-y-4 animate-in fade-in slide-in-from-right-4 duration-500">
                                 <h3 className="text-lg font-bold text-slate-900">Your Environment</h3>
