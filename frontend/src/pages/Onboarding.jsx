@@ -143,8 +143,7 @@ export default function Onboarding() {
                                             id="weeklyWorkoutGoal"
                                             value={formData.weeklyWorkoutGoal}
                                             onChange={handleChange}
-                                            className="flex h-12 w-full rounded-xl border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-900 focus:ring-2 focus:ring-slate-950 transition-all outline-none appearance-none cursor-pointer"
-                                        >
+                                            className="flex h-12 w-full rounded-xl border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-900 focus:ring-2 focus:ring-slate-950 transition-all outline-none appearance-none cursor-pointer">
                                             {[1, 2, 3, 4, 5, 6, 7].map(num => (
                                                 <option key={num} value={num}>{num} days per week</option>
                                             ))}
@@ -157,7 +156,6 @@ export default function Onboarding() {
                                 </div>
                             </div>
                         )}
-
                         {step === 3 && (
                             <div className="space-y-4 animate-in fade-in slide-in-from-right-4 duration-500">
                                 <h3 className="text-lg font-bold text-slate-900">Final Details</h3>
