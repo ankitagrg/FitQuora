@@ -58,8 +58,6 @@ export default function Landing() {
                         </Link>
                     </div>
                 </motion.div>
-
-
                 <motion.div
                     initial={{ opacity: 0, y: 40 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -77,10 +75,8 @@ export default function Landing() {
                     </div>
                 </motion.div>
             </main>
-
-            {/* Footer */}
             <footer className="py-8 text-center text-slate-600 text-sm border-t border-white/5 bg-slate-950">
-                <p>&copy; {new Date().getFullYear()} FitQuora. All Rights Reserved</p>
+                <p> &copy; {new Date().getFullYear()} FitQuora. All Rights Reserved</p>
             </footer>
         </div>
     );
