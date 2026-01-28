@@ -11,7 +11,6 @@ export default function Profile() {
     const { user } = useAuth();
     const { workouts } = useWorkouts();
     const [isEditModalOpen, setIsEditModalOpen] = useState(false);
-
     const activityData = [
         { day: 'Mon', minutes: 0 },
         { day: 'Tue', minutes: 0 },
