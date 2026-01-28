@@ -48,7 +48,6 @@ export default function Onboarding() {
             setLoading(false);
         }
     };
-
     return (
         <div className="min-h-screen bg-slate-50 flex flex-col justify-center py-12 px-4 sm:px-6 lg:px-8">
             <div className="max-w-md w-full mx-auto bg-white rounded-3xl shadow-xl shadow-slate-200 border border-slate-100 overflow-hidden">
