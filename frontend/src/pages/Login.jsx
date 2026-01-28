@@ -35,9 +35,7 @@ export default function Login() {
                 <h2 className="mt-6 text-center text-3xl font-extrabold text-slate-950 tracking-tight">
                     Welcome back
                 </h2>
-
             </div>
-
             <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
                 <div className="bg-white py-8 px-4 shadow-xl shadow-slate-200 border border-slate-100 sm:rounded-2xl sm:px-10">
                     <form className="space-y-6" onSubmit={handleLogin}>
@@ -51,7 +49,6 @@ export default function Login() {
                             className="bg-white text-slate-900 placeholder:text-slate-400 border-slate-200 focus:ring-slate-950 focus:border-slate-950"
                             labelClassName="text-slate-700"
                         />
-
                         <Input
                             id="password"
                             label="Password"
@@ -62,7 +59,6 @@ export default function Login() {
                             className="bg-white text-slate-900 placeholder:text-slate-400 border-slate-200 focus:ring-slate-950 focus:border-slate-950"
                             labelClassName="text-slate-700"
                         />
-
                         <div className="flex items-center justify-between">
                             <div className="flex items-center">
                                 <input
@@ -75,14 +71,12 @@ export default function Login() {
                                     Remember me
                                 </label>
                             </div>
-
                             <div className="text-sm">
                                 <a href="#" className="font-medium text-slate-900 hover:text-slate-700">
                                     Forgot your password?
                                 </a>
                             </div>
                         </div>
-
                         <div>
                             <Button type="submit" className="w-full bg-slate-950 text-white hover:bg-slate-800" size="lg" disabled={authLoading}>
                                 {authLoading ? 'Signing in...' : 'Sign in'}
