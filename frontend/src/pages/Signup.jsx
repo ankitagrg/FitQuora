@@ -63,9 +63,8 @@ export default function Signup() {
                             <Input id="age" name="age" label="Age" type="number" required className="bg-white text-slate-900 placeholder:text-slate-400 border-slate-200 focus:ring-slate-950 focus:border-slate-950" labelClassName="text-slate-700" />
                             <Input id="height" name="height" label="Height (cm)" type="number" required className="bg-white text-slate-900 placeholder:text-slate-400 border-slate-200 focus:ring-slate-950 focus:border-slate-950" labelClassName="text-slate-700" />
                             <Input id="weight" name="weight" label="Weight (kg)" type="number" className="bg-white text-slate-900 placeholder:text-slate-400 border-slate-200 focus:ring-slate-950 focus:border-slate-950" labelClassName="text-slate-700" />
-                        </div>
-
-                        <div>
+                     </div>
+                     <div>
                             <Button type="submit" className="w-full bg-slate-950 text-white hover:bg-slate-800" size="lg" disabled={authLoading}>
                                 {authLoading ? 'Creating Account...' : 'Create Account'}
                             </Button>
