@@ -31,12 +31,9 @@ export default function Profile() {
         { day: 'Sat', cal: 0 },
         { day: 'Sun', cal: 0 },
     ];
-
-    // Aggregation Logic (Simple version assuming current week)
     workouts.forEach(workout => {
         const date = new Date(workout.date);
-        const dayIndex = date.getDay(); // 0 is Sunday, 1 is Monday...
-        // Adjust for Mon-Sun array (0->6)
+        const dayIndex = date.getDay(); 
         const mapIndex = dayIndex === 0 ? 6 : dayIndex - 1;
 
         if (activityData[mapIndex]) {
@@ -85,8 +82,6 @@ export default function Profile() {
     };
 
     const level = getLevel(totalWorkouts);
-
-    // Weekly Goal (Last 7 Days)
     const workoutsThisWeek = workouts.filter(w => {
         const wDate = new Date(w.date);
         const sevenDaysAgo = new Date();
@@ -99,10 +94,7 @@ export default function Profile() {
 
     return (
         <div className="space-y-8 pb-10">
-            {/* Validating Modals */}
             <EditProfileModal isOpen={isEditModalOpen} onClose={() => setIsEditModalOpen(false)} />
-
-            {/* Header Section */}
             <div className="bg-white rounded-3xl p-8 shadow-[0_2px_12px_rgba(71,85,105,0.06)] border border-slate-100 flex flex-col md:flex-row items-center gap-8 text-center md:text-left">
                 <div className="w-24 h-24 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 ring-4 ring-blue-50">
                     <UserIcon className="w-10 h-10" />
@@ -135,7 +127,6 @@ export default function Profile() {
                             </div>
                         )}
                     </div>
-
                     <div className="mt-5 flex flex-wrap justify-center md:justify-start gap-3">
                         <Button variant="secondary" size="sm" className="rounded-full px-4" onClick={() => setIsEditModalOpen(true)}>Edit Profile</Button>
                         <Button variant="primary" size="sm" className="rounded-full px-4">Share Stats</Button>
@@ -156,8 +147,6 @@ export default function Profile() {
                     </div>
                 </div>
             </div>
-
-            {/* KPIs */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <StatCard
                     icon={Trophy}
@@ -181,10 +170,7 @@ export default function Profile() {
                     colorClass="bg-blue-50 text-blue-600"
                 />
             </div>
-
-            {/* Charts Grid */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                {/* Activity Chart */}
                 <div className="bg-white p-6 rounded-3xl shadow-[0_2px_12px_rgba(71,85,105,0.06)] border border-slate-100">
                     <h3 className="text-lg font-bold text-slate-800 mb-6 flex items-center gap-2">
                         <Activity className="w-5 h-5 text-blue-500" />
@@ -221,8 +207,6 @@ export default function Profile() {
                         </ResponsiveContainer>
                     </div>
                 </div>
-
-                {/* Calories Chart */}
                 <div className="bg-white p-6 rounded-3xl shadow-[0_2px_12px_rgba(71,85,105,0.06)] border border-slate-100">
                     <h3 className="text-lg font-bold text-slate-800 mb-6 flex items-center gap-2">
                         <Flame className="w-5 h-5 text-orange-500" />
