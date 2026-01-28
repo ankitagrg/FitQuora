@@ -41,19 +41,16 @@ export default function Profile() {
             calorieData[mapIndex].cal += workout.calories || 0;
         }
     });
-
     const totalWorkouts = workouts.length;
     const totalCalories = workouts.reduce((acc, curr) => acc + (curr.calories || 0), 0);
     const totalMinutes = workouts.reduce((acc, curr) => acc + (parseInt(curr.duration) || 0), 0);
     const getStreak = () => {
         if (workouts.length === 0) return 0;
-
         const dates = [...new Set(workouts.map(w => w.date))].sort().reverse();
         const today = new Date().toISOString().split('T')[0];
         const yesterday = new Date(Date.now() - 86400000).toISOString().split('T')[0];
 
         if (dates[0] !== today && dates[0] !== yesterday) return 0;
-
         let streak = 0;
         let currentDate = dates[0];
 
@@ -71,8 +68,6 @@ export default function Profile() {
     };
 
     const currentStreak = getStreak();
-
-    // Dynamic Leveling
     const getLevel = (count) => {
         if (count >= 50) return { name: 'Elite', color: 'text-purple-600' };
         if (count >= 30) return { name: 'Platinum', color: 'text-indigo-600' };
