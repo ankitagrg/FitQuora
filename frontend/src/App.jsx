@@ -11,7 +11,6 @@ import { WorkoutProvider } from './context/WorkoutContext';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import ProtectedRoute from './components/ProtectedRoute';
 
-// Main App Component
 function App() {
   return (
     <AuthProvider>
@@ -23,7 +22,6 @@ function App() {
     </AuthProvider>
   );
 }
-
 
 function AppRoutes() {
   const { user, loading } = useAuth();
@@ -47,7 +45,6 @@ function AppRoutes() {
           <Landing />
         )
       } />
-
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
 
