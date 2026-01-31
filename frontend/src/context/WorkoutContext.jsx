@@ -2,7 +2,6 @@ import { createContext, useContext, useState, useEffect, useCallback } from 'rea
 import { useAuth } from './AuthContext';
 
 const WorkoutContext = createContext();
-
 export function WorkoutProvider({ children }) {
     const [workouts, setWorkouts] = useState([]);
     const [loading, setLoading] = useState(false);
@@ -72,7 +71,7 @@ export function WorkoutProvider({ children }) {
             });
 
             if (response.ok) {
-                setWorkouts(workouts.filter(w => w._id !== id)); // Mongo uses _id
+                setWorkouts(workouts.filter(w => w._id !== id)); 
             }
         } catch (error) {
             console.error("Error deleting workout:", error);
