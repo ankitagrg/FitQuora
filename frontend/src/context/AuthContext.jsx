@@ -6,7 +6,7 @@ export function AuthProvider({ children }) {
     const [loading, setLoading] = useState(true); 
     const [authLoading, setAuthLoading] = useState(false); 
 
-    useEffect(() => {
+    useEffect(() => { 
         const checkUser = async () => {
             const storedUser = localStorage.getItem('user');
             if (storedUser) {
