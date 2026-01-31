@@ -23,7 +23,6 @@ export default function Login() {
             alert(error.message);
         }
     };
-
     return (
         <div className="min-h-screen bg-white flex flex-col justify-center py-12 sm:px-6 lg:px-8 selection:bg-slate-950 selection:text-white">
             <div className="sm:mx-auto sm:w-full sm:max-w-md">
