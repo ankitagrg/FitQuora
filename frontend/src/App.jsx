@@ -25,7 +25,6 @@ function App() {
 
 function AppRoutes() {
   const { user, loading } = useAuth();
-
   if (loading) {
     return (
       <div className="min-h-screen bg-slate-950 flex items-center justify-center">
@@ -33,7 +32,6 @@ function AppRoutes() {
       </div>
     );
   }
-
   return (
     <Routes>
       <Route path="/" element={
@@ -44,16 +42,14 @@ function AppRoutes() {
         ) : (
           <Landing />
         )
-      } />
+      }/>
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
-
       <Route path="/onboarding" element={
         <ProtectedRoute>
           <Onboarding />
         </ProtectedRoute>
       } />
-
       <Route path="/dashboard" element={
         <ProtectedRoute>
           <Layout>
@@ -61,7 +57,6 @@ function AppRoutes() {
           </Layout>
         </ProtectedRoute>
       } />
-
       <Route path="/add-workout" element={
         <ProtectedRoute>
           <Layout>
@@ -69,7 +64,6 @@ function AppRoutes() {
           </Layout>
         </ProtectedRoute>
       } />
-
       <Route path="/profile" element={
         <ProtectedRoute>
           <Layout>
@@ -77,8 +71,6 @@ function AppRoutes() {
           </Layout>
         </ProtectedRoute>
       } />
-
-    
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );
