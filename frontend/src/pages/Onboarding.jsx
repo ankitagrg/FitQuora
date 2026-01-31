@@ -128,7 +128,7 @@ export default function Onboarding() {
                                             value={formData.dietaryPreference}
                                             onChange={handleChange}
                                             className="flex h-12 w-full rounded-xl border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-900 focus:ring-2 focus:ring-slate-950 transition-all outline-none appearance-none cursor-pointer"
-                                        >
+                                    >
                                             <option>No Restrictions</option>
                                             <option>Vegetarian</option>
                                             <option>Non-Vegetarian</option>
