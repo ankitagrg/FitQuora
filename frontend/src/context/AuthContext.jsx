@@ -1,11 +1,10 @@
 import { createContext, useContext, useState, useEffect } from 'react';
 
 const AuthContext = createContext();
-
 export function AuthProvider({ children }) {
     const [user, setUser] = useState(null);
-    const [loading, setLoading] = useState(true); // Initial app load
-    const [authLoading, setAuthLoading] = useState(false); // Login/Signup action
+    const [loading, setLoading] = useState(true); 
+    const [authLoading, setAuthLoading] = useState(false); 
 
     useEffect(() => {
         const checkUser = async () => {
@@ -58,7 +57,6 @@ export function AuthProvider({ children }) {
         setUser(null);
         localStorage.removeItem('user');
     };
-
     const signup = async (name, email, password, age, height, weight) => {
         setAuthLoading(true);
         try {
@@ -106,9 +104,7 @@ export function AuthProvider({ children }) {
                 },
                 body: JSON.stringify(userData),
             });
-
             const data = await response.json();
-
             if (!response.ok) {
                 throw new Error(data.message || 'Update failed');
             }
@@ -141,12 +137,10 @@ export function AuthProvider({ children }) {
             console.error('Error refreshing user:', error);
         }
     };
-
     return (
         <AuthContext.Provider value={{ user, loading, authLoading, login, logout, signup, updateProfile, refreshUser }}>
             {!loading && children}
         </AuthContext.Provider>
     );
 }
-
 export const useAuth = () => useContext(AuthContext);
