@@ -62,8 +62,8 @@ export default function Landing() {
                     initial={{ opacity: 0, y: 40 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.3, duration: 0.7 }}
-                    className="mt-32 max-w-3xl mx-auto"
-                >
+                    className="mt-32 max-w-3xl mx-auto">
+                
                     <div className="relative p-8 md:p-12">
                         <Quote className="w-12 h-12 text-slate-800 absolute -top-4 -left-4 opacity-50" />
                         <blockquote className="text-2xl md:text-3xl font-serif italic text-slate-300 leading-relaxed">
