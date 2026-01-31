@@ -11,7 +11,6 @@ export default function Login() {
     const location = useLocation();
     const [email, setEmail] = useState('demo@example.com');
     const [password, setPassword] = useState('password');
-
     const from = location.state?.from?.pathname || '/dashboard';
 
     const handleLogin = async (e) => {
@@ -64,8 +63,7 @@ export default function Login() {
                                     id="remember-me"
                                     name="remember-me"
                                     type="checkbox"
-                                    className="h-4 w-4 text-slate-950 focus:ring-slate-950 border-slate-300 rounded"
-                                />
+                                    className="h-4 w-4 text-slate-950 focus:ring-slate-950 border-slate-300 rounded"/>
                                 <label htmlFor="remember-me" className="ml-2 block text-sm text-slate-900">
                                     Remember me
                                 </label>
